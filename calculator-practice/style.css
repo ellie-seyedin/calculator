@@ -1,0 +1,49 @@
+/* ---------------- calculator --------------------- */
+#cal-container{
+    width: 300px;
+    margin: 100px auto;
+    background-color: rgb(12, 17, 85);
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    border-radius: 20px;
+}
+#cal-container h2{
+    background-color: #efeefe;
+    color: black;
+    margin: 0px;
+    padding: 10px 10px 10px 10px;
+    height: 53px;
+    font-size: 35px;
+    grid-column: 1/5;
+    grid-row: 1/2;
+    border-radius: 10px;
+}
+
+#cal-container h4{
+    text-align: center;
+    background-color: #36355f;
+    color: white;
+    margin: 0px;
+    border-radius: 10px;
+    height: 45px;
+    font-size: 22px;
+    padding-top: 20px;
+    transition-duration:0.3s ;
+}
+
+#cal-container h4:hover{
+   cursor: pointer; 
+   background-color: plum;
+   box-shadow: 0px 0px 0px 20px #000; 
+}
+
+.operator-btn{
+    background-color: yellow !important; 
+    color: black !important;
+}
+
+.operator-btn:hover{
+    background-color: rgb(182, 182, 35) !important; 
+}
