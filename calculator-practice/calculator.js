@@ -1,37 +1,53 @@
-class calculator{
-    constructor(){
+var number1 = "";
+var number2 = "";
+var isNumber1Ready=false;
+var equalSign = document.getElementById("equal")
 
+function formNumber(n){
+    if(!isNumber1Ready){
+        number1 += n;
+        document.getElementById("displayNumber").textContent = number1;
     }
-
-
-    add(num1, num2) {
-        return num1+num2;
+    else{
+        number2 += n;
+        document.getElementById("displayNumber").textContent = number2;
     }
-
-    subtract(num1, num2) {
-        return num1-num2;
-    }
-
-    multiply(num1, num2) {
-        return num1*num2;
-    }
-
-    divide(num1, num2) {
-        if (num2 === 0) {
-            throw new Error("Division by zero is not allowed.");
-          }
-        return num1/num2;
-    }
-
-    remainder(num1, num2) {
-        return num1%num2;
-    }
-
 }
-const calculator1 = new calculator();
-console.log("Addition is = " + calculator1.add(1,2));
-console.log("Subtraction is = " + calculator1.subtract(54,19));
-console.log("Multiplication is = " + calculator1.multiply(18,987));
-console.log("Division is = " + calculator1.divide(1,2));
-console.log("Remainder is = " + calculator1.remainder(1,2));
+
+function calculate(p1,p2,operation){
+    p2 = Number(p2)
+    result = operation(p1,p2)
+    document.getElementById("displayNumber").textContent = result;
+}
+
+function sum(n1,n2){ return n1+n2}
+function subtract(n1,n2){ return n1-n2}
+function multiply(n1,n2){ return n1*n2}
+function divide(n1,n2){ return n1/n2}
+
+function formOperatorSum(){
+    number1 = Number(number1);
+    isNumber1Ready=true;
+    equalSign.setAttribute("onclick", "calculate(number1,number2,sum)");
+}
+function formOperatorSubtract(){
+    number1 = Number(number1)
+    isNumber1Ready = true;
+    equalSign.setAttribute("onclick", "calculate(number1,number2,subtract)")
+}
+function formOperatorMultiply(){
+    number1 = Number(number1)
+    isNumber1Ready = true;
+    equalSign.setAttribute("onclick", "calculate(number1,number2,multiply)")
+}
+function formOperatorDivide(){
+    number1 = Number(number1);
+    isNumber1Ready=true;
+    equalSign.setAttribute("onclick", "calculate(number1,number2,divide)")  
+}
+function clearDisplay(){
+    number1 = ""
+    number2 = ""
+    document.getElementById("displayNumber").textContent = "0";
+}
 
