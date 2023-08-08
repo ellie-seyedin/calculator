@@ -2,6 +2,9 @@ var number1 = "";
 var number2 = "";
 var isNumber1Ready=false;
 var equalSign = document.getElementById("equal")
+var allClear = document.getElementById("allClear")
+let currentCalculation = "";
+
 
 function formNumber(n){
     if(!isNumber1Ready){
@@ -45,6 +48,7 @@ function formOperatorDivide(){
     isNumber1Ready=true;
     equalSign.setAttribute("onclick", "calculate(number1,number2,divide)")  
 }
+
 function clearDisplay(){
     number1 = ""
     number2 = ""
